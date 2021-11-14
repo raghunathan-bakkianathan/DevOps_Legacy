@@ -92,46 +92,43 @@ Note:	Set the path "C:\hudson" and start the Hudson server (To avoid build error
 
 <img width="1176" alt="Screenshot 2021-11-14 at 10 36 38 PM" src="https://user-images.githubusercontent.com/66691402/141690853-7cf431a1-eac4-49d0-8366-f0c87d90bf64.png">
 
-      d) Copy the entire Dot net c# code into the installed Hudson workspace folder.  
-      e) Select Freestyle project - > configure - > Add build step -> Invoke Top-level Maven targets and set goals as "dotnet: compile" (Refer: Image below).
-
-
 <img width="1136" alt="Screenshot 2021-11-14 at 10 36 42 PM" src="https://user-images.githubusercontent.com/66691402/141690866-ceec75cc-4b06-4497-9f0d-4bef0c1d0348.png">
-
-      f) Build the Project. Two ways to achieve the Build :
-            i)Using the command in cmd prompt ”mvn dotnet:compile” (Refer Sample Output below) and  launch the command “mvn sonar:sonar” for code quality reports.               (Refer : http://maven-dotnet-plugin.appspot.com/index.html). Apache maven path : D:\SampleDotnet\TestSolution> set path=%path%;D:\softwares\apache-maven-2.2.1\bin;
-            ii) Using Hudson UI (Refer: Image below).
 
 
 <img width="1084" alt="Screenshot 2021-11-14 at 10 35 45 PM" src="https://user-images.githubusercontent.com/66691402/141690903-3eed6716-238e-48f5-acd2-8f463a054e32.png">
+
+ 
+      d) Copy the entire Dot net c# code into the installed Hudson workspace folder. 
+      
+      e) Select Freestyle project - > configure - > Add build step -> Invoke Top-level Maven targets and set goals as "dotnet: compile" (Refer: Image below).
+	
+
+<img width="935" alt="Screenshot 2021-11-14 at 10 35 55 PM" src="https://user-images.githubusercontent.com/66691402/141690912-06912f90-e625-4963-8607-c36b17267076.png">
+
+
+       f) Build the Project. Two ways to achieve the Build :
+            i)Using the command in cmd prompt ”mvn dotnet:compile” (Refer Sample Output below) and  launch the command “mvn sonar:sonar” for code quality reports.               (Refer : http://maven-dotnet-plugin.appspot.com/index.html). Apache maven path : D:\SampleDotnet\TestSolution> set path=%path%;D:\softwares\apache-				maven-2.2.1\bin;
+            ii) Using Hudson UI (Refer: Image below).
+
+<img width="914" alt="Screenshot 2021-11-14 at 10 36 02 PM" src="https://user-images.githubusercontent.com/66691402/141690917-7f437f15-150e-4190-a3b8-a7fcf8718048.png">
 
 
 **6) Integrate sonar Plug-in with Hudson Server.**
          a) Freestyle Project -> Configure -> Post-build Actions -> Make checkbox as checked for "Sonar" (Refer: Image 5). 
 
 
-<img width="935" alt="Screenshot 2021-11-14 at 10 35 55 PM" src="https://user-images.githubusercontent.com/66691402/141690912-06912f90-e625-4963-8607-c36b17267076.png">
-
-          b) Sonar - > Advanced - > Select the Maven in “Maven Version” dropdown.	(If you were not able to find the maven in the dropdown. Build the project and select the maven version). 
-         c) Create a c# profile in sonar and make it as default (to compile the .net projects) (Refer: Image 7).
+<img width="923" alt="Screenshot 2021-11-14 at 10 36 08 PM" src="https://user-images.githubusercontent.com/66691402/141690929-6e36b358-1a49-42f8-8143-3eef5b90d14a.png">
 
 
-<img width="914" alt="Screenshot 2021-11-14 at 10 36 02 PM" src="https://user-images.githubusercontent.com/66691402/141690917-7f437f15-150e-4190-a3b8-a7fcf8718048.png">
+  b) Sonar - > Advanced - > Select the Maven in “Maven Version” dropdown.	(If you were not able to find the maven in the dropdown. Build the project and select the maven version). 
+         c) Create a c# profile in sonar and make it as default (to compile the .net projects) 
+
+<img width="938" alt="Screenshot 2021-11-14 at 10 36 14 PM" src="https://user-images.githubusercontent.com/66691402/141690942-84828aab-b680-4ace-8c4e-fe68bbc53099.png">
 
 
 **7) View the Results in sonar:**
         c) Build the project on the Hudson server. 
         d) View the results in sonar (Refer: Image below).
-
-
-<img width="923" alt="Screenshot 2021-11-14 at 10 36 08 PM" src="https://user-images.githubusercontent.com/66691402/141690929-6e36b358-1a49-42f8-8143-3eef5b90d14a.png">
-
-
-
-
-<img width="938" alt="Screenshot 2021-11-14 at 10 36 14 PM" src="https://user-images.githubusercontent.com/66691402/141690942-84828aab-b680-4ace-8c4e-fe68bbc53099.png">
-
-
 
 <img width="947" alt="Screenshot 2021-11-14 at 10 36 20 PM" src="https://user-images.githubusercontent.com/66691402/141690953-c100d51e-2b10-467a-ae31-8dab605a0860.png">
 
