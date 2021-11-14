@@ -89,26 +89,28 @@ Configuration in Hudson for Maven Build
 	   maven-dotnet-plug-in\0.1\maven-dotnet-plugin-0.1.jar	
 	   The same folder structure should be followed for "dotnet-common" and "maven-dotnet-runtime" jar files.
 		
-5. Configuration and Maven Build for .net project with Hudson server:
+**5. Configuration and Maven Build for .net project with Hudson server:**
+
 	a) Configure settings.xml file in 2 places one in path "$apache-maven\apache-maven-2.2.1\conf" as well another in installed path. 
 		Refer : http://maven-dotnet-plugin.appspot.com/settings.html
 	b) Configure Pom.xml in the root folder of the dot net application referring to the above tree structure. 
-		Refer : http://maven-dotnet-                   plugin.appspot.com/configuration.html
-		Note: The Pom.xml, Solution file,  Project folder should be in the same folder. Configure the pom.xml  by referring to the above website.	
-          **Free-style software project job:**
-	  
+		Refer : http://maven-dotnet-plugin.appspot.com/configuration.html
+		Note: The Pom.xml, Solution file,  Project folder should be in the same folder. Configure the pom.xml  by referring to the above website.
+		
 	c) Schedule a new free-style software project job (Refer: Image below).
 
-        	![image](https://user-images.githubusercontent.com/66691402/141690334-29e43f20-b315-4f8c-acc1-2063fafca7d2.png)
+        	
+<img width="646" alt="Screenshot 2021-11-14 at 10 28 14 PM" src="https://user-images.githubusercontent.com/66691402/141690590-bf3ccba9-5b2a-4826-a398-46cc36bd9c56.png">
 
 
 	d) Copy the entire Dot net c# code into the installed Hudson workspace folder.  
 	
 	e) Select Freestyle project - > configure - > Add build step -> Invoke Top-level Maven targets and set goals as "dotnet: compile" (Refer: Image below).
 
-                ![image](https://user-images.githubusercontent.com/66691402/141690355-dcb7a432-074a-4dc7-913e-527eb275a1e4.png)
+               <img width="658" alt="Screenshot 2021-11-14 at 10 28 20 PM" src="https://user-images.githubusercontent.com/66691402/141690617-d75a5847-8ae3-4539-80ec-09dec5054a6a.png">
 
-
+	       
+	       
 	f) Build the Project. Two ways to achieve the Build :
 		i)Using the command in cmd prompt ”mvn dotnet:compile” (Refer Sample Output below) and  launch the command “mvn sonar:sonar” for code quality                        reports. (Refer : http://maven-dotnet-plugin.appspot.com/index.html).	       
 				Apache maven path  D:\SampleDotnet\TestSolution> set path=%path%;D:\softwares\apache-maven-2.2.1\bin;
@@ -117,26 +119,26 @@ Configuration in Hudson for Maven Build
 
 	g)Using the command in cmd prompt ”mvn dotnet:compile” (Refer Sample Output below) and  launch the command “mvn sonar:sonar” for code quality                        reports. (Refer : http://maven-dotnet-plugin.appspot.com/index.html).	       
                        
-6) Integrate sonar Plug-in with Hudson Server.
+**6) Integrate sonar Plug-in with Hudson Server.**
 	
 	a) Freestyle Project -> Configure -> Post-build Actions -> Make checkbox as checked for "Sonar" (Refer: Image 5). 
 
-             ![image](https://user-images.githubusercontent.com/66691402/141690405-af25c599-c11e-4c93-990d-bae2b3fd546e.png)
+           
+<img width="655" alt="Screenshot 2021-11-14 at 10 28 28 PM" src="https://user-images.githubusercontent.com/66691402/141690657-12a5a94d-9cfa-43fe-8159-83c5529919ab.png">
 
 
         b) Sonar - > Advanced - > Select the Maven in “Maven Version” dropdown.	(If you were not able to find the maven in the dropdown. Build the project and select the maven version). 
         c) Create a c# profile in sonar and make it as default (to compile the .net projects) (Refer: Image 7).
 
-              ![image](https://user-images.githubusercontent.com/66691402/141690418-4f5586b3-4b46-49f0-8829-7e808040101e.png)
+              ![image](https://user-images.githubusercontent.com/66691402/141689994-9f8e827d-9111-425b-8c1c-0f81571d4ef5.png)
 
 
+**7) View the Results in sonar:**
+        a) Build the project on the Hudson server. 
+        b) View the results in sonar (Refer: Image below).
+              
 
-7) View the Results in sonar:
-        c) Build the project on the Hudson server. 
-        d) View the results in sonar (Refer: Image below).
-                ![image](https://user-images.githubusercontent.com/66691402/141689994-9f8e827d-9111-425b-8c1c-0f81571d4ef5.png)
-
-                ![image](https://user-images.githubusercontent.com/66691402/141690452-23a564d7-4441-4e72-b412-bf498d34fe19.png)
+               <img width="674" alt="Screenshot 2021-11-14 at 10 28 35 PM" src="https://user-images.githubusercontent.com/66691402/141690672-5509c4c6-d5e9-4c1a-9770-c6c383ee7dd3.png">
 
                 
 
@@ -144,36 +146,20 @@ Configuration in Hudson for Maven Build
 8) **Build results in command Prompt:**
 
 D:\ProSolution>mvn dotnet:compile
-
 [INFO] Scanning for projects...
-
 [INFO] ------------------------------------------------------------------------
-
 [INFO] Building test Pro solution
-
 [INFO]    task-segment: [dotnet:compile]
-
 [INFO] ------------------------------------------------------------------------
-
 [INFO] [dotnet:compile {execution: default-cli}]
-
 [INFO] Launching the build of D:\Raghunathan\ProSolution\ProSolution.sln
-
 [INFO] Build of ProSolution.sln in configuration debug terminated with SUCCESS!
-
 [INFO] Launching the build of D:\Raghunathan\ProSolution\ProSolution.sln
-
 [INFO] Build of ProSolution.sln in configuration release terminated with SUCCESS!
-
 [INFO] ------------------------------------------------------------------------
-
 [INFO] BUILD SUCCESSFUL
-
 [INFO] ------------------------------------------------------------------------
-
 [INFO] Total time: 7 seconds
-
 [INFO] Finished at: Tue Jun 01 15:55:28 IST 2010
-
 [INFO] Final Memory: 6M/13M
 	
