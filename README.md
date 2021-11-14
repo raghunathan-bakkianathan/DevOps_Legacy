@@ -135,20 +135,36 @@ Sonar Profile Creation
 8) **Build results in command Prompt:**
 
 D:\ProSolution>mvn dotnet:compile
+
 [INFO] Scanning for projects...
+
 [INFO] ------------------------------------------------------------------------
+
 [INFO] Building test Pro solution
+
 [INFO]    task-segment: [dotnet:compile]
+
 [INFO] ------------------------------------------------------------------------
+
 [INFO] [dotnet:compile {execution: default-cli}]
+
 [INFO] Launching the build of D:\Raghunathan\ProSolution\ProSolution.sln
+
 [INFO] Build of ProSolution.sln in configuration debug terminated with SUCCESS!
+
 [INFO] Launching the build of D:\Raghunathan\ProSolution\ProSolution.sln
+
 [INFO] Build of ProSolution.sln in configuration release terminated with SUCCESS!
+
 [INFO] ------------------------------------------------------------------------
+
 [INFO] BUILD SUCCESSFUL
+
 [INFO] ------------------------------------------------------------------------
+
 [INFO] Total time: 7 seconds
+
 [INFO] Finished at: Tue Jun 01 15:55:28 IST 2010
+
 [INFO] Final Memory: 6M/13M
 	
